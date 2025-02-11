@@ -1,10 +1,18 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
 
-<h2>Students</h2>
-<ul>
-  {% for person in persons %}
-    <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
-  {% endfor %}
-</ul>
+<h1>Squad 1G</h1>
+<p class="sort">sorteer</p>
+
+<main>
+  <ul>
+    {% for person in persons %}
+    <li>
+      <img src="{{ person.avatar }}" onerror="this.src='/public/altperson.png'" alt="Profile Image">
+      <a href="/student/{{ person.id }}">{{ person.name }}</a>
+      <p><img src="/public/refresh.png">{{ person.birthdate }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
 
 {% render 'partials/foot.liquid', squads: squads %}

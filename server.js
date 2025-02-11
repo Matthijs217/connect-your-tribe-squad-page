@@ -5,6 +5,7 @@ import express from 'express'
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
 
+
 // Je kunt de volgende URLs uit onze API gebruiken:
 // - https://fdnd.directus.app/items/tribe
 // - https://fdnd.directus.app/items/squad
@@ -14,7 +15,7 @@ import { Liquid } from 'liquidjs';
 // En de oefeningen uit https://github.com/fdnd-task/connect-your-tribe-squad-page/blob/main/docs/squad-page-ontwerpen.md
 
 // Haal alle eerstejaars squads uit de WHOIS API op van dit jaar (2024–2025)
-const squadResponse = await fetch('https://fdnd.directus.app/items/squad?filter={"_and":[{"cohort":"2425"},{"tribe":{"name":"FDND Jaar 1"}}]}')
+const squadResponse = await fetch('https://fdnd.directus.app/items/squad?filter={"_and":[{"cohort":"2425"},{"tribe":{"name":"FDND Jaar 1"}},{"name":"1G"}]}')
 
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
 const squadResponseJSON = await squadResponse.json()
@@ -22,13 +23,12 @@ const squadResponseJSON = await squadResponse.json()
 // Controleer de data in je console (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(squadResponseJSON)
 
-
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
 // Gebruik de map 'public' voor statische bestanden (resources zoals CSS, JavaScript, afbeeldingen en fonts)
 // Bestanden in deze map kunnen dus door de browser gebruikt worden
-app.use(express.static('public'))
+app.use('/public', express.static('public')); // Ensure the correct directory is used
 
 // Stel Liquid in als 'view engine'
 const engine = new Liquid();
