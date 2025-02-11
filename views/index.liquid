@@ -3,7 +3,11 @@
 <script src="/public/script.js"></script>
 
 <h1>Squad 1G</h1>
-<p class="sort">sorteer</p>
+
+<div class="sortbox">
+  <p class="sort">Sorteren</p>
+  <img src="/public/sort.png" alt="sorticon">
+</div>
 
 <main>
   <ul>
@@ -12,12 +16,9 @@
       <img src="{{ person.avatar }}" onerror="this.src='/public/altperson.png'" alt="Profile Image">
       <a href="/student/{{ person.id }}">{{ person.name }}</a>
       <span class="person-info">
-        <img class="refresh-btn" src="/public/refresh.png" 
-            data-birthdate="{{ person.birthdate | date: "%d-%m-%Y" }}"
-            data-favcolor="{{ person.fav_color }}"
-            data-favcountry="{{ person.fav_country }}"
-        >
-        <span class="info-text">{{ person.birthdate | date: "%d-%m-%Y" }}</span>
+        <img class="refresh-btn" src="/public/refresh.png" data-birthdate="{{ person.birthdate | date: " %d-%m-%Y" }}"
+          data-favcolor="{{ person.fav_color }}" data-favcountry="{{ person.fav_country }}">
+        <span class="info-text">Geboortedatum: {{ person.birthdate | date: "%d-%m-%Y" }}</span>
       </span>
     </li>
     {% endfor %}

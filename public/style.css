@@ -15,14 +15,27 @@ h1 {
     text-align: center;
     color: #66e5bf;
     font-size: 2.5rem;
-    margin-top: 3vh;}
+    margin-top: 3vh;
+}
 
-.sort {
-    color: white;
-    text-align: center;
-    font-size: 1.3rem;
-    font-weight: 600;
+.sortbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 3vh 0 3vh 0;
+    position: relative;
+    & .sort {
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    & img {
+        margin-left: 1vw;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
 }
 
 main {
@@ -39,11 +52,11 @@ main ul {
     gap: 2em;
     width: 80vw;
     flex-wrap: wrap;
-    
+
     @media (min-width: 550px) {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     @media (min-width: 800px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -58,11 +71,13 @@ ul li {
     border-radius: 5px;
     border: #66e5bf 1px solid;
     box-shadow: -5px 5px 1px #66e5bf;
+
     & img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+
     & a {
         color: white;
         font-size: 1.3rem;
@@ -71,6 +86,7 @@ ul li {
         text-align: center;
         margin-top: 4vh;
     }
+
     & span {
         margin-top: 1vh;
         font-size: 1.1rem;
@@ -80,6 +96,7 @@ ul li {
         display: flex;
         align-items: center;
         justify-content: center;
+
         & img {
             width: 20px;
             height: 20px;

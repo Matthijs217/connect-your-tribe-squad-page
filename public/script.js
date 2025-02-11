@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   let refreshButtons = document.querySelectorAll('.refresh-btn');
 
   refreshButtons.forEach(button => {
