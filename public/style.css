@@ -71,7 +71,7 @@ ul li {
         text-align: center;
         margin-top: 4vh;
     }
-    & p {
+    & span {
         margin-top: 1vh;
         font-size: 1.1rem;
         color: white;
@@ -85,8 +85,6 @@ ul li {
             height: 20px;
             margin-right: 1vw;
             cursor: pointer;
-            & :hover {
-            }
         }
     }
 }
