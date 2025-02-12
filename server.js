@@ -15,7 +15,7 @@ import { Liquid } from 'liquidjs';
 // En de oefeningen uit https://github.com/fdnd-task/connect-your-tribe-squad-page/blob/main/docs/squad-page-ontwerpen.md
 
 // Haal alle eerstejaars squads uit de WHOIS API op van dit jaar (2024–2025)
-const squadResponse = await fetch('https://fdnd.directus.app/items/squad?filter={"_and":[{"cohort":"2425"},{"tribe":{"name":"FDND Jaar 1"}},{"name":"1G"}]}')
+const squadResponse = await fetch('https://fdnd.directus.app/items/squad?filter={"_and":[{"cohort":"2425"},{"tribe":{"name":"FDND Jaar 1"}}]}')
 
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
 const squadResponseJSON = await squadResponse.json()
