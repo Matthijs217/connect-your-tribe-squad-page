@@ -1,5 +1,6 @@
-let sortBox = document.querySelector('sort-box');
-let value = sortBox.value;
-
-console.log('value:', value);
-
+document.addEventListener('DOMContentLoaded', function () {
+    let sortBox = document.querySelector('.sort-box');
+    sortBox.addEventListener('change', function () {
+        console.log(this.value);
+    });
+});
