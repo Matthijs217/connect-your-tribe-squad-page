@@ -46,12 +46,12 @@ app.use(express.urlencoded({extended: true}))
 // Maak een GET route voor de index
 app.get('/', async function (request, response) {
   // Haal alle personen uit de WHOIS API op, van dit jaar
-  const personResponse = await fetch('https://fdnd.directus.app/items/person/?sort=name&fields=*,squads.squad_id.name,squads.squad_id.cohort&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 1"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}')
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?sort=name&fields=avatar,name,birthdate,fav_color,fav_country&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 1"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}')
 
   // En haal daarvan de JSON op
   const personResponseJSON = await personResponse.json()
   
-  // personResponseJSON bevat gegevens van alle personen uit alle squads van dit jaar
+  // personResponseJSON bevat gegevens van alle personen uit alle squads van dit jaar 
   // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
