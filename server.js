@@ -28,7 +28,7 @@ const app = express()
 
 // Gebruik de map 'public' voor statische bestanden (resources zoals CSS, JavaScript, afbeeldingen en fonts)
 // Bestanden in deze map kunnen dus door de browser gebruikt worden
-app.use('/public', express.static('public')); // Ensure the correct directory is used
+app.use(express.static('public'))
 
 // Stel Liquid in als 'view engine'
 const engine = new Liquid();
