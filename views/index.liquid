@@ -18,8 +18,7 @@
       <img src="{{ person.avatar }}" onerror="this.src='altperson.png'" alt="Profile Image">
       <a href="/student/{{ person.id }}">{{ person.name }}</a>
       <span class="person-info">
-        <img class="refresh-btn" src="refresh.png" data-birthdate="{{ person.birthdate | date: " %d-%m-%Y" }}"
-          data-favcolor="{{ person.fav_color }}" data-favcountry="{{ person.fav_country }}">
+        <img class="refresh-btn" src="refresh.png" alt="Refreshnop">
         <span class="info-text">Geboortedatum: {{ person.birthdate | date: "%d-%m-%Y" }}</span>
       </span>
     </li>
