@@ -6,6 +6,7 @@ import express from 'express'
 import { Liquid } from 'liquidjs';
 
 
+
 // Je kunt de volgende URLs uit onze API gebruiken:
 // - https://fdnd.directus.app/items/tribe
 // - https://fdnd.directus.app/items/squad
@@ -41,7 +42,6 @@ app.set('views', './views')
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
 
-
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index
 app.get('/', async function (request, response) {
@@ -70,6 +70,18 @@ app.get('/', async function (request, response) {
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
   response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+})
+
+let messages = []
+
+app.get('/berichten', async function (request, response) {
+  response.render('messages.liquid', {messages: messages})
+})
+
+app.post('/berichten', async function (request, response) {
+  messages.push(request.body.message)
+  console.log("Matthijs")
+  response.redirect(303, '/berichten')
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
