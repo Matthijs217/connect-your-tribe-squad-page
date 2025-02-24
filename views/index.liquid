@@ -4,12 +4,21 @@
 
 <h1>Squad 1G</h1>
 
-<select class="sort-box">Sorteren
-  <option value="">Sorteer</option>
-  <option value="az">A-Z</option>
-  <option value="za">Z-A</option>
-  <option value="leeftijd">Leeftijd</option>
-</select>
+<details>
+  <summary>Sorteer</summary>
+  <a href="/?sort=name">A-Z</a>
+  <a href="/?sort=-name">Z-A</a>
+  <a href="/?sort=birthdate">Leeftijd</a>
+</details>
+
+<form method="get">
+  <select name="sort">
+    <option value="az">A-Z</option>
+    <option value="za">Z-A</option>
+    <option value="leeftijd">Leeftijd</option>
+  </select>
+  <button>GO!</button>
+</form>
 
 <main>
   <ul>
